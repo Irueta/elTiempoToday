@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para el encabezado */
+  header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  header h3 {
+    font-size: 18px;
+    font-style: italic;
+    margin: 0;
+  }
+/* Estilo para CHECKBOX */
+  #checkboxOptions{
+    text-align: center;
+  }
+  
+  /* Estilo para JOKE */
+
+#joke {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+  /* Estilo para el contenedor de pronóstico diario y vestimenta */
+  #weatherToday {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #vestimentaImg {
+width: 25%;
+  }
+  #vestimentaSec {
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  /* Estilo para el contenedor de pronóstico diario */
+  #weatherSec {
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #weatherSec h2 {
+    font-size: 24px;
+  }
+  
+  #weatherSec img#wheatherCode {
+    max-width: 100px;
+    margin: 10px 0;
+  }
+  
+  #weatherSec p#rain,
+  #weatherSec p#wind {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  /* Estilo para el artículo de la semana */
+  #weatherWeekSec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #weatherWeekSec article{
+    width: 16%;
+  }
+
+
+
+  #weatherWeekSec h2 {
+    font-size: 24px;
+  }
+  
+  #weatherWeekSec img#wheatherCode {
+    max-width: 100px;
+    margin: 10px 0;
+  }
+  
+  #weatherWeekSec p#rain,
+  #weatherWeekSec p#wind {
+    font-size: 16px;
+    margin: 10px 0;
+  }
