@@ -139,6 +139,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (mostrarVestimenta) {
       vestimenta.style.display= "block";
+      vestimenta.style.width="50%"
+      weatherToday.style.width="50%"
+
     } else {
       vestimenta.style.display= "none";
       weatherToday.style.width="100%";
