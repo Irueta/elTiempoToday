@@ -221,7 +221,7 @@ async function createWeatherToday(){
       articleWeather.appendChild(printWeathercode);
 	//----------------------RAIN--------------------------------
       const printRain = document.createElement("p");
-      printRain.textContent = `Probabilidad de lluvia ${rain[0]}%`
+      printRain.textContent = `🌧 Probabilidad de lluvia ${rain[0]}%`
       printRain.id = "rain";
       articleWeather.appendChild(printRain);
 	//----------------------TEMPERATURA MAX-MIN--------------------------------
@@ -229,19 +229,19 @@ async function createWeatherToday(){
       const printTempMin = document.createElement("p");
       printTempMax.id="tempMax";
       printTempMin.id="tempMin";
-      printTempMax.textContent = `La temperatura maxima es de: ${tempMax[0]}°C`;
-		  printTempMin.textContent = `La temperatura minima es de: ${tempMin[0]}°C`;
+      printTempMax.textContent = `🌡 La temperatura maxima es de: ${tempMax[0]}°C`;
+		  printTempMin.textContent = `🌡 La temperatura minima es de: ${tempMin[0]}°C`;
       articleWeather.appendChild(printTempMax);
 		  articleWeather.appendChild(printTempMin);
 	//----------------------WIND--------------------------------
       const printWind = document.createElement("p");
-      printWind.textContent = `El viento será de ${wind[0]} km/h`;
+      printWind.textContent = `🌬 El viento será de ${wind[0]} km/h`;
       printWind.id = "wind";
       articleWeather.appendChild(printWind);
 	//----------------------UV--------------------------------
 		  const printUV = document.createElement("p");
       printUV.id="uv";
-      printUV.textContent = `El indice de rayos UV es ${uV[0]}`;
+      printUV.textContent = `🕶 El indice de rayos UV es ${uV[0]}`;
       articleWeather.appendChild(printUV);
 
       
@@ -277,7 +277,7 @@ async function createWeatherToday(){
       vestimentaSec.id = "vestimentaSec"
       weatherToday.appendChild(vestimentaSec)
       const vestimentaTitle = document.createElement("h2")
-      vestimentaTitle.textContent= "Vestimenta TODAY"
+      vestimentaTitle.textContent= "🕴 Vestimenta TODAY 🩱"
       vestimentaSec.appendChild(vestimentaTitle);
       const vestimentaImg=document.createElement("img");
       vestimentaImg.src="./assets/img/vestimenta.webp";
@@ -327,20 +327,20 @@ async function createWeatherToday(){
           articleDay.appendChild(printWeathercode);
       //----------------------RAIN--------------------------------
           const printRain = document.createElement("p");
-          printRain.textContent = `Prob. lluvia ${rain}%`
+          printRain.textContent = `🌧 Prob. lluvia ${rain}%`
           printRain.id = "rain";
           articleDay.appendChild(printRain);
       //----------------------TEMPERATURA MAX-MIN--------------------------------
           const printTempMax = document.createElement("p");
           const printTempMin = document.createElement("p");
           const maxImg = "./assets/tempMax.png";
-          printTempMax.textContent = `Temp. Max: ${tempMax}°C`;
-          printTempMin.textContent = `Temp. Min: ${tempMin}°C`;
+          printTempMax.textContent = `🌡Temp. Max: ${tempMax}°C`;
+          printTempMin.textContent = `🌡Temp. Min: ${tempMin}°C`;
           articleDay.appendChild(printTempMax);
           articleDay.appendChild(printTempMin);
       //----------------------WIND--------------------------------
           const printWind = document.createElement("p");
-          printWind.textContent = `Viento: ${wind} km/h`;
+          printWind.textContent = `🌬 Viento: ${wind} km/h`;
           printWind.id = "wind";
           articleDay.appendChild(printWind);
         
