@@ -248,7 +248,7 @@ async function createWeatherToday(){
       
       //--------------------ARROPA--------------------------------------
      
-        function sugerirVestimenta(weathercode) {
+/*         function sugerirVestimenta(weathercode) {
           console.log(`Esta es la mierda q no sale${weathercode}`)
         if (weathercode===0) {
           return "Te vas a asar. La crema bronceadora ha pasado de moda. Date aceite en todo el cuerpo y traje de Borat para ir lo más fresco posible";
@@ -275,10 +275,92 @@ async function createWeatherToday(){
         } else {
           return "Lo mejor que puedes hacer es no quitarte el pijama y picar código, pero si es imprescindible salir, no te olvides el traje de fregona, por lo menos vas a alegrar el día a algun@";
         }
+      } */
+
+
+        const respuestas =[
+            {
+                values : [0],
+                response: "Te vas a asar. La crema bronceadora ha pasado de moda. Date aceite en todo el cuerpo y traje de Borat para ir lo más fresco posible",
+                img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+                values: [1,2,3],
+                response: "Mainly clear, partly cloudy, and overcast",
+                img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+              values: [45,48],
+              response: "Hoy es un buen día para ligar. Parece que va a haber niebla, por lo que si no eres muy agraciado es tu día! Ponte ropa de gala y a gozarla!",
+              img: "./assets/img/vestimenta/traje.png"
+            },
+            {
+            values: [51,53,55],
+            response: "Txiri-miri si? Txiri-miri no? lo mejor hoy ponerte lo que quieras y salir con el sombrero-paraguas por si hay imprevistos",
+            img: "./assets/img/vestimenta/paraguasCabeza.jpg"
+            },
+            {
+              values: [56,57],
+              response: "Hoy toca txiri-miri de mierda. No vas a acertar en la vestimenta porque es imposible. Por eso hoy toca algo infalible, traje guardia civil. La gorra sin molestar mucho protege de la lluvia y la ropa si no calienta lo necesario igual te dan de ostias por la calle, por lo que caliente vas a llegar seguro",
+              img: "./assets/img/vestimenta/guardiaCivil.avif"
+            },
+            {
+              values: [61,63,65],
+              response: "Rain",
+              img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+              values: [66,67],
+              response: "Freezing Rain",
+              img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+              values: [71,73,75],
+              response: "Snow fall",
+              img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+              values: [77],
+              response: "Snow grains",
+              img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+            values: [80,81,82],
+            response: "Rain showers",
+            img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+            values: [85,86],
+            response: "Snow showers",
+            img: "./assets/img/vestimenta/Borat.jpg"
+            },
+            {
+            values: [95,96,99],
+            response: "Lo mejor que puedes hacer es no quitarte el pijama y picar código, pero si es imprescindible salir, no te olvides el traje de fregona, por lo menos vas a alegrar el día a algun@",
+            img: "./assets/img/vestimenta/Borat.jpg"
+            }
+        ];
+
+        function devuelveVestimenta(valor){
+            for(element of respuestas){
+                if(element.values.includes(valor)){
+                    return element.response
+                }
+            }
+            return "no debería";
+        }
+
+        function devuelveVestimentaImg(valor){
+          for(element of respuestas){
+              if(element.values.includes(valor)){
+                  return element.img
+              }
+          }
+          return "no debería";
       }
       
   
-      const vestimentaRecomendada = sugerirVestimenta(parseInt(weathercode[0]));
+      const vestimentaRecomendada = devuelveVestimenta(weathercode[0]);
       const vestimentaSec = document.createElement("article")
       vestimentaSec.id = "vestimentaSec"
       weatherToday.appendChild(vestimentaSec)
@@ -286,7 +368,7 @@ async function createWeatherToday(){
       vestimentaTitle.textContent= "🕴 Vestimenta TODAY 🩱"
       vestimentaSec.appendChild(vestimentaTitle);
       const vestimentaImg=document.createElement("img");
-      vestimentaImg.src="./assets/img/vestimenta.webp";
+      vestimentaImg.src=`${devuelveVestimentaImg(weathercode[0])}`;
       vestimentaImg.id="vestimentaImg";
       vestimentaSec.appendChild(vestimentaImg);
       const printVestimenta = document.createElement("h4");
