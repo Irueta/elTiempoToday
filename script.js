@@ -247,32 +247,38 @@ async function createWeatherToday(){
       
       
       //--------------------ARROPA--------------------------------------
-      
-      function sugerirVestimenta(tempMin, tempMax, rain, wind, uV) {
-        if (tempMax >= 30 && rain < 30 && wind < 10 && uV > 7) {
-          return "La ropa recomendada para hoy es: Ropa veraniega, protector solar, sombrero, gafas de sol.";
-        } else if (tempMax >= 30 && rain < 30 && wind < 20 && uV > 5) {
+     
+        function sugerirVestimenta(weathercode) {
+          console.log(`Esta es la mierda q no sale${weathercode}`)
+        if (weathercode===0) {
+          return "Te vas a asar. La crema bronceadora ha pasado de moda. Date aceite en todo el cuerpo y traje de Borat para ir lo más fresco posible";
+        } else if (weathercode<4 && weathercode>0) {
           return "La ropa recomendada para hoy es: Ropa ligera, chaqueta ligera, sombrero, gafas de sol, protector solar.";
-        } else if (tempMax >= 30 && rain >= 30) {
+        } else if (weathercode<49 && weathercode>44) {
           return "La ropa recomendada para hoy es: Ropa ligera, impermeable, calzado impermeable, protector solar.";
-        } else if (tempMax < 20 && wind >= 20) {
+        } else if (weathercode<56 && weathercode>50-) {
           return "La ropa recomendada para hoy es: Ropa en capas, chaqueta resistente al viento, gorra, gafas de sol, protector solar.";
-        } else if (tempMax < 20 && rain >= 30) {
+        } else if (weathercode<58 && weathercode>55) {
           return "La ropa recomendada para hoy es: Ropa en capas, impermeable, calzado impermeable, bufanda, guantes, protector solar si es necesario.";
-        } else if (tempMax < 20 && tempMin < 10) {
+        } else if (weathercode<66 && weathercode>60) {
           return "La ropa recomendada para hoy es: Ropa abrigada, bufanda, guantes, protector solar si es necesario.";
-        } else if (tempMax < 20 && wind >= 20) {
+        } else if (weathercode<68 && weathercode>65) {
           return "La ropa recomendada para hoy es: Ropa abrigada en capas, chaqueta resistente al viento, bufanda, guantes, protector solar.";
-        } else if (tempMax < 20 && uV > 5) {
+        } else if (weathercode<76 && weathercode>70) {
           return "La ropa recomendada para hoy es: Ropa abrigada, gafas de sol, protector solar.";
-        } else if (tempMax < 10 && rain >= 30) {
-          return "La ropa recomendada para hoy es: Ropa abrigada y resistente al agua, impermeable, botas impermeables, bufanda, gorro, guantes, protector solar si es necesario.";
+        } else if (weathercode===77) {
+          return "Va a hacer frio de cojones y además va a llover. Ponte el traje de neopreno y sal a la calle sin miedo a que te mojes.";
+        } else if (weathercode<83 && weathercode>79) {
+          return "Va a hacer frio de cojones y además va a llover. Ponte el traje de neopreno y sal a la calle sin miedo a que te mojes.";
+        } else if (weathercode<87 && weathercode>84) {
+          return "Va a hacer frio de cojones y además va a llover. Ponte el traje de neopreno y sal a la calle sin miedo a que te mojes.";
         } else {
-          return "Lo mejor que puedes hacer es no quitarte el pijama y picar código, pero si es imprescindible salir, no te olvides el traje de neopreno";
+          return "Lo mejor que puedes hacer es no quitarte el pijama y picar código, pero si es imprescindible salir, no te olvides el traje de fregona, por lo menos vas a alegrar el día a algun@";
         }
       }
       
-      const vestimentaRecomendada = sugerirVestimenta(tempMin[0], tempMax[0], rain[0], wind[0], uV[0]);
+  
+      const vestimentaRecomendada = sugerirVestimenta(parseInt(weathercode[0]));
       const vestimentaSec = document.createElement("article")
       vestimentaSec.id = "vestimentaSec"
       weatherToday.appendChild(vestimentaSec)
