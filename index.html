@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EL TIEMPO TODAY</title>
     <link rel="shortcut icon" href="./assets/img/joker.png" type="image/x-icon">
+<!--     <link rel="stylesheet" href="css/materialize.min.css">
+    <script src="js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <link rel="stylesheet" href="style.css">
+            
+           
 </head>
 <body>
     <header>
@@ -13,9 +23,33 @@
         <h3>Donde el tiempo es lo menos importante</h3>
     </header>
     <section id="checkboxOptions">
-        <label for="vestimentaCheckbox">Sugerir vestimenta:</label>
+        <label for="vestimentaCheckbox">
+            <input type="checkbox" id="vestimentaCheckbox" />
+            <span>Sugerir vestimenta</span>
+          </label>
+        <label for="weatherWeekCheckbox">
+            <input type="checkbox" id="weatherWeekCheckbox" />
+            <span>Pronostico semanal</span>
+          </label>
+        <label for="tempCheckbox">
+            <input type="checkbox" id="tempCheckbox" />
+            <span>Mostrar Temperatura</span>
+          </label>
+          <label for="rainCheckbox">
+            <input type="checkbox" id="rainCheckbox" />
+            <span>Mostrar prob. lluvia</span>
+          </label>
+          <label for="windCheckbox">
+            <input type="checkbox" id="windCheckbox" />
+            <span>Mostrar Viento</span>
+          </label><label for="uvCheckbox">
+            <input type="checkbox" id="uvCheckbox" />
+            <span>Mostrar índice UV</span>
+          </label>
+          <div></div>
+<!--            <label for="vestimentaCheckbox">Sugerir vestimenta:</label>
         <input type="checkbox" id="vestimentaCheckbox" />
-        <label for="weatherWeekCheckbox">Pronostico semanal:</label>
+          <label for="weatherWeekCheckbox">Pronostico semanal:</label>
         <input type="checkbox" id="weatherWeekCheckbox" />
         <label for="tempCheckbox">Mostrar Temperatura:</label>
         <input type="checkbox" id="tempCheckbox" />
@@ -24,20 +58,48 @@
         <label for="windCheckbox">Mostrar Viento:</label>
         <input type="checkbox" id="windCheckbox" />
         <label for="uvCheckbox">Mostrar índice UV:</label>
-        <input type="checkbox" id="uvCheckbox" />
+        <input type="checkbox" id="uvCheckbox" /> -->
 
     </section>
     <section id="joke">
         <h3>🃏 El chiste TODAY: 🃏</h3>
 
     </section>
+    <div id="map"></div>
     <section id="weatherToday">
+        <div class="loader"></div>
+
 
     </section>
+    
     <section id="weatherList"> 
         
+        
+    </section>
+    <section id="juegos">
+      <h3 style="text-align: center;">🎮 Juegos TODAY 🕹</h3>
+      <div>
+        <iframe src='https://www.minijuegos.com/embed/bush-invaders' style='width:700px;height:550px;' frameborder='0' allowfullscreen></iframe>
+      </div>
     </section>
     <footer>¿Por qué los meteorólogos nunca se aburren? Porque siempre tienen algo en el horizonte. 🌦😄</footer>
+    <!-- <div class="container">
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><article><h2>Dom. 29</h2><img src="./assets/img/onak/80.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 35%</p><p>🌡Temp. Max: 20.4°C</p><p>🌡Temp. Min: 17.4°C</p><p id="wind">🌬 Viento: 20.6 km/h</p></article></a>
+            <a class="carousel-item" href="#two!"><article><h2>Sáb. 28</h2><img src="./assets/img/onak/3.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 52%</p><p>🌡Temp. Max: 20.3°C</p><p>🌡Temp. Min: 9.8°C</p><p id="wind">🌬 Viento: 20.8 km/h</p></article></a>
+            <a class="carousel-item" href="#three!"><article><h2>Vie. 27</h2><img src="./assets/img/onak/80.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 61%</p><p>🌡Temp. Max: 18.2°C</p><p>🌡Temp. Min: 10°C</p><p id="wind">🌬 Viento: 20.1 km/h</p></article></a>
+            <a class="carousel-item" href="#four!"><article><h2>Jue. 26</h2><img src="./assets/img/onak/65.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 100%</p><p>🌡Temp. Max: 21.3°C</p><p>🌡Temp. Min: 14.6°C</p><p id="wind">🌬 Viento: 17.7 km/h</p></article></a>
+            <a class="carousel-item" href="#five!"><article><h2>Mié. 25</h2><img src="./assets/img/onak/53.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 29%</p><p>🌡Temp. Max: 19°C</p><p>🌡Temp. Min: 14.8°C</p><p id="wind">🌬 Viento: 21.3 km/h</p></article></a>
+            <a class="carousel-item" href="#five!"><article><h2>Mar. 24</h2><img src="./assets/img/onak/3.png" id="wheatherCode"><p id="rain">🌧 Prob. lluvia 98%</p><p>🌡Temp. Max: 18°C</p><p>🌡Temp. Min: 8.5°C</p><p id="wind">🌬 Viento: 25 km/h</p></article></a>
+          </div>
+    </div> -->
     <script src="/script.js"></script>
+<!--     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems);
+  });
+    </script> -->
+    
 </body>
 </html>
